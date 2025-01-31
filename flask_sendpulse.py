@@ -9,8 +9,8 @@ def autenticar_sendpulse():
     url = "https://oauth.sendpulse.com/oauth/access_token"
     payload = {
         "grant_type": "client_credentials",
-        "client_id": os.getenv("SENDPULSE_CLIENT_ID"),
-        "client_secret": os.getenv("SENDPULSE_CLIENT_SECRET")
+        "client_id": os.getenv("e813ef99130a7e6bdd3f7157a0bdb880"),
+        "client_secret": os.getenv("b4ad043884a0be91210ff97bc6c63b72")
     }
     response = requests.post(url, data=payload)
     response.raise_for_status()
@@ -18,7 +18,7 @@ def autenticar_sendpulse():
 
 # Função para buscar um produto no Tiny ERP pelo SKU
 def buscar_produto_tiny(sku):
-    api_token = os.getenv("API_TOKEN_TINY")
+    api_token = os.getenv("e46061418c080bef38a9dc057270ca775bc55b22")
     url = f"https://api.tiny.com.br/api2/produto.obter.estrutura.php?token={api_token}&formato=json&id={sku}"
     response = requests.get(url)
     response.raise_for_status()
@@ -27,7 +27,7 @@ def buscar_produto_tiny(sku):
 
 # Função para buscar um pedido no Tiny ERP pelo ID
 def buscar_pedido_tiny(pedido_id):
-    api_token = os.getenv("API_TOKEN_TINY")
+    api_token = os.getenv("e46061418c080bef38a9dc057270ca775bc55b22")
     url = f"https://api.tiny.com.br/api2/pedidos.pesquisa.php?token={api_token}&formato=json&numero={pedido_id}"
     response = requests.get(url)
     response.raise_for_status()
